@@ -8,18 +8,23 @@ class User
   def initialize(email_to_save, age_to_save)
     @email = email_to_save
     @age = age_to_save
-    @@all_users.push(@email, @age)
+    @@all_users << self
 
   end
 
-  def self.find_by_email(email)
-  	@select_user = @@all_users.select{|x| x.email == email}
-  	return @select_user
-  end
 
   def self.all
   	return @@all_users
   end
+
+  def self.find_by_email(email)
+  	@@all_users.each do |user|
+
+      if user.email == email
+        return user
+      end
+  end
+end
 
   
 end

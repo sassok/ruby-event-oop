@@ -31,7 +31,7 @@ User.new("claude@claude.com", 75)
 user_1 = User.find_by_email("claude@claude.com")
 
 #On peut ensuite utiliser ce user comme on veut. Par exemple pour afficher son age:
-puts "Voici l'age du User trouvé : #{user_1[0].age}"
+puts "Voici l'age du User trouvé : #{user_1.age}"
 
 
 
